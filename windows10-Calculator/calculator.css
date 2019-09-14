@@ -1,6 +1,16 @@
+a {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+a:hover{
+    background-color: #cfcfcf
+}
+
 .container{
     width: 300px;
     background-color: #f2f2f2;
+    border: 1px solid #406fb7;
 }
 
 img {
@@ -13,6 +23,14 @@ img {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+
+.top-container img {
+    background-color: #f2f2f2;
+}
+
+.top-container p {
+    margin-left: 10px;
 }
 
 .flex {
@@ -36,6 +54,7 @@ img {
     font-size: 40px;
     font-weight: bold;
     text-align: right;
+    margin-right: 10px;
 }
 
 .second-top-buttons {
@@ -43,5 +62,46 @@ img {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    font-size: 35px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.second-top-buttons a {
+    display: flex;
+    width: 74.5px;
+    height: 56px;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-links{
+    width: 74.5;
+    height: 56;
+}
+
+.bottom-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #e6e6e6;
+}
+
+.link-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.link-row a {
+    display: flex;
+    justify-content: center;
+    width: 74.5px;
+    height: 56px;
+    font-weight: bold;
+    align-items: center;
+}
+
+.opacity{
+    opacity: 0.3;
 }
