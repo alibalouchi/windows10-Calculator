@@ -1,10 +1,5 @@
-a {
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-a:hover{
-    background-color: #cfcfcf
+.bold {
+    font-weight: bold;
 }
 
 .container{
@@ -13,16 +8,20 @@ a:hover{
     border: 1px solid #406fb7;
 }
 
-img {
-    background-color: #f2f2f2;
-}
-
 .top-container {
     width: 300px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+
+.close{
+    margin-right: 5px;
+}
+
+.close a {
+    cursor: pointer;
 }
 
 .top-container img {
@@ -38,15 +37,15 @@ img {
     flex-direction: row;
 }
 
-.standard {
-    font-weight: bold;
-}
-
 .top-buttons {
     width: 300px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+}
+
+.top-buttons:hover{
+    cursor: pointer;
 }
 
 .calculator-screen {
@@ -63,7 +62,6 @@ img {
     flex-direction: row;
     justify-content: space-around;
     font-size: 20px;
-    font-weight: bold;
 }
 
 .second-top-buttons a {
@@ -75,8 +73,16 @@ img {
 }
 
 .top-links{
-    width: 74.5;
-    height: 56;
+    width: 25%;
+}
+
+.top-links:hover{
+    background-color: #cfcfcf;
+    cursor: pointer;
+}
+
+.bottom-link {
+    width: 25%;
 }
 
 .bottom-button {
@@ -93,15 +99,33 @@ img {
     font-size: 20px;
 }
 
+.link-row a:hover{
+    background-color: #cfcfcf;
+    cursor: pointer;
+}
+
 .link-row a {
     display: flex;
     justify-content: center;
     width: 74.5px;
     height: 56px;
-    font-weight: bold;
     align-items: center;
+}
+
+.html-code{
+    font-size: 1.5em;
 }
 
 .opacity{
     opacity: 0.3;
+}
+
+.bottom-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu{
+    font-size: 48px;
 }
