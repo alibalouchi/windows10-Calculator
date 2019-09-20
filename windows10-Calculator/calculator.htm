@@ -1,76 +1,96 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link href="./calculator.css" rel="stylesheet" type="text/css">
         <title>Windows10 Calculator</title>
-        <link type="text/css" rel="stylesheet" href="calculator.css"></link>
     </head>
     <body>
         <div class="container">
-            <div class="top-container">
-                <p>Calculator</p>
-                <div class="close">
-                    <a class="close-link">ー</a>
-                    <a class="close-link">🗆</a>
-                    <a class="close-link">྾</a>
+            <div class="calculator-container">
+                <div class="top-navbar">
+                    <p id="calculator">
+                        Calculator
+                    </p>
+                    <div class="close-bar">
+                        <a id="minimize">ー</a>
+                        <a id="maximize">🗆</a>
+                        <a id="close">྾</a> 
+                    </div>
+                </div>
+            
+                <div class="calculator-screen">
+                    <div class="top-screen">
+                        <a id="calculator-menu">≡</a>
+                        <p id="standard">
+                            Standard
+                        </p>
+                    </div>
+                    <div class="result"></div>
+                    <div class="row">
+                        <a id="MC">MC</a>
+                        <a id="MR">MR</a>
+                        <a id="Mplus">M+</a>
+                        <a id="Mminus">M-</a>
+                        <a id="MS">MS</a>
+                    </div>
+                    </div>
+
+                    <hr />
+            
+                    <div class="functions">
+                        <div class="row">
+                            <a id="percent">&percnt;</a>
+                            <a id="sqrt">√</a>
+                            <a id="xpower2">X<sup>2</sup></a>
+                            <a id="divide-x"><sup>1</sup>&#8725;<sub>X</sub></a>
+                        </div>
+                        <div class="row">
+                            <a id="CE">CE</a>
+                            <a id="C">C</a>
+                            <a id="delete"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDklEQVRYR+2W4Q3CIBSErxu4iY6gm+hmbqIj6CZuUHNJMeQFeAelaUzoT8LjPo570Ak7f9PO+hgAw4G/cuAA4AHg1KFzfhtXHegpTv4qgFj8DeAM4NPowrzUyQA9xaldBaCIc451IzUWDJMBFPE7gCOASwQR6l4AboljkgAUcc55LgAUIwS/0CW5rLgAinjYmIXgOFu0FNQiQI14CoJjXpe4ANZWr93s/RCOI1cnHYEKYR2jAwxlCcIF4CKpgKVazQaOtR68BKBCsA0ZuvhmDPB04drahrmUx/0ez9nkIqqBqHkW5COIF1UyoUI0AdhMqGKlefJrmHNiLUQTwFrRZL36R7SJOBcdAMOB3R34AqM1YCEu+sgCAAAAAElFTkSuQmCC" /></a>
+                            <a id="division">➗</a>
+                        </div>
+                    </div>
+            
+                    <div class="numpad">
+                        <div class="row">
+                            <a class="number">7</a>
+                            <a class="number">8</a>
+                            <a class="number">9</a>
+                            <a id="multiply">&times;</a>
+                        </div>
+                        <div class="row">
+                            <a class="number">4</a>
+                            <a class="number">5</a>
+                            <a class="number">6</a>
+                            <a id="minus">➖</a>
+                        </div>
+                        <div class="row">
+                            <a class="number">1</a>
+                            <a class="number">2</a>
+                            <a class="number">3</a>
+                            <a id="plus">&plus;</a>
+                        </div>
+                        <div class="row">
+                            <a id="plus-minus">&plusmn;</a>
+                            <a class="number">0</a>
+                            <a id="dot">&#8729;</a>
+                            <a id="equals">&equals;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="history-memory">
+                    <div class="hidden-close-bar">
+                        <a id="minimize">ー</a>
+                        <a id="maximize">🗆</a>
+                        <a id="close">྾</a> 
+                    </div>
+                    <div class="history-memory-bar">
+                        <a id="memory">Memory</a>
+                        <a id="history">History</a>
+                    </div>
+                    <div class="history-memory-screen"></div>
                 </div>
             </div>
-            <div class="top-container">
-                <div class="flex">
-                    <a id="menu">≡</a>
-                    <p class="bold">STANDARD</p>
-                </div>
-                <img src="../image/renew.png" />
-            </div>
-            <div class="calculator-screen">
-                0
-            </div>
-            <div class="top-buttons">
-                <a class="opacity">MC</a>
-                <a class="opacity">MR</a>
-                <a>M+</a>
-                <a>M-</a>
-                <a>MS</a>
-                <a>M</a>
-            </div>
-            <hr />
-            <div class="second-top-buttons">
-                <a class="top-links">&percnt;</a>
-                <a class="top-links">√</a>
-                <a class="top-links"><p>x<sup>2</sup></p></a>
-                <a class="top-links"><p><sup>1</sup>&#8725;<sub>x</sub></p></a>
-            </div>
-            <div class="bottom-button">
-                <div class="link-row">
-                    <a>CE</a>
-                    <a>C</a>
-                    <a><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDklEQVRYR+2W4Q3CIBSErxu4iY6gm+hmbqIj6CZuUHNJMeQFeAelaUzoT8LjPo570Ak7f9PO+hgAw4G/cuAA4AHg1KFzfhtXHegpTv4qgFj8DeAM4NPowrzUyQA9xaldBaCIc451IzUWDJMBFPE7gCOASwQR6l4AboljkgAUcc55LgAUIwS/0CW5rLgAinjYmIXgOFu0FNQiQI14CoJjXpe4ANZWr93s/RCOI1cnHYEKYR2jAwxlCcIF4CKpgKVazQaOtR68BKBCsA0ZuvhmDPB04drahrmUx/0ez9nkIqqBqHkW5COIF1UyoUI0AdhMqGKlefJrmHNiLUQTwFrRZL36R7SJOBcdAMOB3R34AqM1YCEu+sgCAAAAAElFTkSuQmCC" /></a>
-                    <a>➗</a>
-                </div>
-                <div class="link-row">
-                    <a class="bold">7</a>
-                    <a class="bold">8</a>
-                    <a class="bold">9</a>
-                    <a class="html-code">&times;</a>
-                </div>
-                <div class="link-row">
-                    <a class="bold">4</a>
-                    <a class="bold">5</a>
-                    <a class="bold">6</a>
-                    <a>➖</a>
-                </div>
-                <div class="link-row">
-                    <a class="bold">1</a>
-                    <a class="bold">2</a>
-                    <a class="bold">3</a>
-                    <a class="html-code">&plus;</a>
-                </div>
-                <div class="link-row">
-                    <a class="html-code">&plusmn;</a>
-                    <a class="bold">0</a>
-                    <a class="html-code">&#8729;</a>
-                    <a class="html-code">&equals;</a>
-                </div>
-            </div>
-        </div>
-    </body>
+        </body>
 </html>
