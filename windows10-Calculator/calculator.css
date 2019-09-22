@@ -1,134 +1,163 @@
-.container{
+body{
     display: flex;
-    flex-direction: row;
-}
-
-.calculator-container{
-    width: 30vw;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #406fb7;
-    background-color: #eee;
-}
-
-.calculator-container a {
-    text-align: center;
-}
-
-.top-navbar{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.calculator-screen{
-    display: flex;
-    flex-direction: column;
-}
-
-.top-screen{
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    align-items: center;
-}
-
-.result{
-    display: block;
-    height: 8vw;
-}
-
-.row{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.row a{
-    width: 25%; 
-    height: 5vw;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    margin: 1px;
-    font-size: 16px;
-    box-sizing: border-box;
-}
-
-.row a:hover{
-    cursor: pointer;
-    background-color: #ccc;
-}
-
-.number:hover{
-    cursor: pointer;
-    background-color: #a29585 !important;
-    box-shadow: 1px #e6b06f !important;
-}
-
-.calculator-screen .row a{
-    cursor: pointer;
-    background-color: #eee;
-}
-
-.history-memory{
-    display: block;
-    width: 25vw;
-    border: 1px solid #406fb7;
-    background-color: #eee;
-}
-
-.number{
-    background-color: #ccc;
-}
-
-@media screen and (max-width: 900px){
-    .history-memory{
-        display: none;
+  }
+  
+  .container{
+      display: flex;
+      flex-direction: row;
+  }
+  
+  .calculator-container{
+      width: 30vw;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #406fb7;
+      background-color: #eee;
+  }
+  
+  .calculator-container a {
+      text-align: center;
+  }
+  
+  .top-navbar{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+  }
+  
+  .calculator-screen{
+      display: flex;
+      flex-direction: column;
+  }
+  
+  .top-screen{
+      display: flex;
+      flex-direction: row;
+      justify-content: left;
+      align-items: center;
+  }
+  
+  .result{
+      display: block;
+      height: 8vw;
+  }
+  
+  .close-bar{
+    font-size: 1vw;
+  }
+  
+  .row{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+  }
+  
+  .row a{
+      width: 25%; 
+      height: 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 1px;
+      font-size: 2vw;
+      box-sizing: border-box;
+  }
+  
+  .row a:hover{
+      cursor: pointer;
+      background-color: #ccc;
+  }
+  
+  .number:hover{
+      cursor: pointer;
+      background-color: #a29585 !important;
+      box-shadow: 1px #e6b06f !important;
+  }
+  
+  .calculator-screen .row a{
+      cursor: pointer;
+      background-color: #eee;
+  }
+  
+  .history-memory{
+      display: block;
+      width: 25vw;
+      border: 1px solid #406fb7;
+      background-color: #eee;
+  }
+  
+  .number{
+      background-color: #ccc;
+  }
+  
+  .hidden-close-bar{
+      text-align: right;
+      margin-right: 8px;
+  }
+  
+  #calculator{
+      margin-left: 10px;
+      font-size: 1.5vw;
+  }
+  
+  #calculator-menu{
+      font-size: 4vw;
+      margin-left: 10px;
+  }
+  
+  #standard{
+    font-size: 2vw;
+  }
+  
+  #MC{
+      opacity: 0.3;
+  }
+  
+  #MR{
+      opacity: 0.3;
+  }
+  
+  #memory{
+      opacity: 0.3;
+      font-size: 2vw;
+  }
+  
+  #history{
+    font-size: 2vw;
+  }
+  
+  .history-memory-bar{
+      margin-left: 10px;
+  }
+  
+  .history-memory-bar a:hover {
+      cursor: pointer;
+  }
+  
+  #delete{
+    height: 50%;
+  }
+  
+  @media screen and (max-width: 900px){
+      .history-memory{
+          display: none;
+      }
+      .close-bar{
+          margin-right: 8px;
+      }
+  }
+  
+  @media screen and (max-width: 500px){
+    .calculator-container{
+      width: 99vw;
     }
-    .close-bar{
-        margin-right: 8px;
-    }
-}
-
-@media screen and (min-width: 900px){
-    .close-bar{
-        display: none;
-    }
-}
-
-.hidden-close-bar{
-    text-align: right;
-    margin-right: 8px;
-}
-
-#calculator{
-    margin-left: 10px;
-}
-
-#calculator-menu{
-    font-size: 30px;
-    margin-left: 10px;
-}
-
-#MC{
-    opacity: 0.3;
-}
-
-#MR{
-    opacity: 0.3;
-}
-
-#memory{
-    opacity: 0.3;
-}
-
-.history-memory-bar{
-    margin-left: 10px;
-}
-
-.history-memory-bar a:hover {
-    cursor: pointer;
-}
+  }
+  
+  @media screen and (min-width: 900px){
+      .close-bar{
+          display: none;
+      }
+  }
