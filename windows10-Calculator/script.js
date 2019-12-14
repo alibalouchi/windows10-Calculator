@@ -12,7 +12,7 @@ const handleEquationClick = (equation) => {
   calculatorStack.push(screen)
   calculatorStack.push(equation)
   let historyResult = document.getElementById("history-result")
-  historyResult.innerHTML = calculatorStack
+  historyResult.innerHTML = calculatorStack.join(' ')
   screen = 0
 }
 
@@ -50,11 +50,30 @@ const equals = () => {
   }
   screen = 0
   let result = document.getElementById("result")
+  let historyResult = document.getElementById("history-result")
+  let historyScreen = document.getElementById("history-screen")
+  let historyResultScreen = document.getElementById("result-history-screen")
   result.innerHTML = calculatorStack[calculatorStack.length - 1]
-  console.log(calculatorStack)
   history.push(calculatorStack[0])
   histories.push(history);
+  histories.map((item, index) => {historyScreen.innerHTML = renderHistory(histories, index)[0] 
+    ; historyResultScreen.innerHTML = calculatorStack[0]})
+  // renderHistory(histories, 0)
+  historyResult.innerHTML = ""
   calculatorStack = []
+}
+
+const renderResult = (historyArray) => {
+  let result = document.getElementById("result");
+  result.innerHTML = historyArray.map
+}
+
+const renderHistory = (historyArray, index) => {
+  let result = historyArray[index].pop(historyArray[index][historyArray[index].length])
+  historyArray[index].push("=")
+  console.log(result)
+
+  return [(historyArray[index].join(' ')), result];
 }
 
 const clearScreen = () => {
