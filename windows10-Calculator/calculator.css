@@ -44,8 +44,9 @@ body{
     font-size: 100%;
   }
   
-  .result{
+  #result{
     height: 15vh;
+    padding: 25px;
   }
   
   .row{
