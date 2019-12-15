@@ -43,36 +43,36 @@
 
           <div class="functions">
             <div class="row">
-              <a class="hide-in-big blue">&percnt;</a>
-              <a class="hide-in-big blue">√</a>
-              <a class="lucida-font hide-in-big blue">
+              <a onclick="percent()" class="hide-in-big blue">&percnt;</a>
+              <a onclick="squareRoot()" class="hide-in-big blue">√</a>
+              <a onclick="power2()" class="lucida-font hide-in-big blue">
                 <p>
                   x<sup>2</sup>
                 </p>
               </a>
-              <a class="lucida-font hide-in-big blue">
+              <a onclick="divideX()" class="lucida-font hide-in-big blue">
                 <p><sup>1</sup>&#8725;<sub>x</sub></p>
               </a>
             </div>
             <div class="row">
               <a class="show-in-big blue">&percnt;</a>
-              <a class="cs blue">CE</a>
-              <a onclick="clearScreen()" class="cs blue">C</a>
-              <a class="blue"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDklEQVRYR+2W4Q3CIBSErxu4iY6gm+hmbqIj6CZuUHNJMeQFeAelaUzoT8LjPo570Ak7f9PO+hgAw4G/cuAA4AHg1KFzfhtXHegpTv4qgFj8DeAM4NPowrzUyQA9xaldBaCIc451IzUWDJMBFPE7gCOASwQR6l4AboljkgAUcc55LgAUIwS/0CW5rLgAinjYmIXgOFu0FNQiQI14CoJjXpe4ANZWr93s/RCOI1cnHYEKYR2jAwxlCcIF4CKpgKVazQaOtR68BKBCsA0ZuvhmDPB04drahrmUx/0ez9nkIqqBqHkW5COIF1UyoUI0AdhMqGKlefJrmHNiLUQTwFrRZL36R7SJOBcdAMOB3R34AqM1YCEu+sgCAAAAAElFTkSuQmCC" /></a>
-              <a class="hover-blue blue">\[\div\]</a>
+              <a onclick="clearScreen()" class="cs blue">CE</a>
+              <a onclick="clearStack()" class="cs blue">C</a>
+              <a onclick="deleteDigit()" class="blue"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDklEQVRYR+2W4Q3CIBSErxu4iY6gm+hmbqIj6CZuUHNJMeQFeAelaUzoT8LjPo570Ak7f9PO+hgAw4G/cuAA4AHg1KFzfhtXHegpTv4qgFj8DeAM4NPowrzUyQA9xaldBaCIc451IzUWDJMBFPE7gCOASwQR6l4AboljkgAUcc55LgAUIwS/0CW5rLgAinjYmIXgOFu0FNQiQI14CoJjXpe4ANZWr93s/RCOI1cnHYEKYR2jAwxlCcIF4CKpgKVazQaOtR68BKBCsA0ZuvhmDPB04drahrmUx/0ez9nkIqqBqHkW5COIF1UyoUI0AdhMqGKlefJrmHNiLUQTwFrRZL36R7SJOBcdAMOB3R34AqM1YCEu+sgCAAAAAElFTkSuQmCC" /></a>
+              <a onclick="handleEquationClick('/')" class="hover-blue blue">\[\div\]</a onclick="handleNumberClick(7)">
             </div>
           </div>
 
           <div class="numpad">
             <div class="row">
-              <a class="lucida-font show-in-big blue">√</a>
+              <a onclick="squareRoot()" class="lucida-font show-in-big blue">√</a onclick="squareRoot()">
               <a onclick="handleNumberClick(7)" class="number">7</a>
               <a onclick="handleNumberClick(8)" class="number">8</a>
               <a onclick="handleNumberClick(9)" class="number">9</a>
               <a onclick="handleEquationClick('*')" class="hover-blue blue">&times;</a>
             </div>
             <div class="row">
-              <a class="functions-big lucida-font show-in-big blue">
+              <a onclick="power2()" class="functions-big lucida-font show-in-big blue">
                 <p>
                   x<sup>2</sup>
                 </p>
@@ -82,7 +82,7 @@
                 <a onclick="handleEquationClick('-')" class="hover-blue blue">-</a>
             </div>
             <div class="row">
-              <a class="functions-big lucida-font show-in-big blue">
+              <a onclick="power3()" class="functions-big lucida-font show-in-big blue">
                 <p>
                   x<sup>3</sup>
                 </p>
@@ -93,12 +93,12 @@
               <a onclick="handleEquationClick('+')" class="hover-blue blue">&plus;</a>
             </div>
             <div class="row">
-              <a class="functions-big lucida-font show-in-big blue">
+              <a onclick="divideX()" class="functions-big lucida-font show-in-big blue">
                 <p><sup>1</sup>&#8725;<sub>x</sub></p>
               </a>
-              <a class="blue">&plusmn;</a>
+              <a onclick="plusMinus()" class="blue">&plusmn;</a>
               <a onclick="handleNumberClick(0)" class="number">0</a>
-              <a class="blue">&#8729;</a>
+              <a onclick="dotFunction()" class="blue">&#8729;</a>
               <a onclick="equals()" class="hover-blue blue">&equals;</a>
             </div>
           </div>
@@ -114,9 +114,7 @@
           <a id="history">History</a>
           <a id="memory">Memory</a>
         </div>
-        <div class="history-memory-screen">
-          <span id="history-screen" class="grey"></span>
-          <span id="result-history-screen" class="black"></span>
+        <div id="history-screen" class="history-memory-screen">
         </div>
       </div>
 		</div>

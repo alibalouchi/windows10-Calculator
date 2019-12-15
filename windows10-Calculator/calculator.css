@@ -29,6 +29,14 @@ body {
   width: 4vw;
 }
 
+.history {
+  text-align: right;
+}
+
+.history:hover{
+  background-color: #BDBDBD;
+}
+
 .close-bar a:hover,
 .hidden-close-bar a:hover {
   background-color: #B1B2B5;
@@ -210,7 +218,7 @@ body {
 }
 
 #history {
-  border-bottom: 2px solid #0097A7;
+  border-bottom: 4px solid #1976D2;
   margin-right: 10%;
 }
 
@@ -238,6 +246,8 @@ body {
   justify-self: flex-end;
   margin: 5px;
   margin-right: 5px;
+  font-weight: bolder;
+  font-size: 2rem;
 }
 
 .lucida-font {
