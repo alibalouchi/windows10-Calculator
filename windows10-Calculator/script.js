@@ -1,27 +1,33 @@
-let screen = 0
+let screen = ""
 let calculatorStack = []
 let histories = []
 let dot = false;
+let executed = false;
 
 const handleNumberClick = (number) => {
-  if ((screen == 0 || screen % 1 == 0) && (dot == false)){
-    screen = (screen * 10) + +number
-  }else if(screen == 0 && dot == true && +number == 0){
-    screen = screen / 10;
-  } else{
-    screen = (screen + +number / (10 **(fractionalDigits(screen) + 1)))
+  if (!executed){
+    executed = true;
+    screen = "";
   }
+  if (calculatorStack.length == 1){
+    calculatorStack = []
+  }
+  screen += `${number}`
   let result = document.getElementById("result")
   result.innerHTML = screen
 }
 
 const handleEquationClick = (equation) => {
-  calculatorStack.push(screen);
+  if (calculatorStack.length == 0){
+    calculatorStack.push(screen);
+  }else{
+    calculatorStack = [calculatorStack[0]]
+  }
   calculatorStack.push(equation);
   let historyResult = document.getElementById("history-result");
   historyResult.innerHTML = calculatorStack.join(' ');
   dot = false;
-  screen = 0;
+  screen = "";
 }
 
 const equals = () => {
@@ -49,53 +55,54 @@ const equals = () => {
       if (typeof calculatorStack[index] == "string"){
         switch (calculatorStack[index]){
           case "*":
-            tmpResult = calculatorStack[index - 1] * calculatorStack[index + 1];
+            tmpResult = +calculatorStack[index - 1] * +calculatorStack[index + 1];
             calculatorStackFixer(tmpResult, index)
             break;
           case "+":
-            tmpResult = calculatorStack[index - 1] + calculatorStack[index + 1];
+            tmpResult = +calculatorStack[index - 1] + +calculatorStack[index + 1];
             calculatorStackFixer(tmpResult, index)
             break;
           case "/":
-            tmpResult = calculatorStack[index - 1] / calculatorStack[index + 1];
+            tmpResult = +calculatorStack[index - 1] / +calculatorStack[index + 1];
             calculatorStackFixer(tmpResult, index)
             break;
         }
       }
   }
-  screen = 0
   result.innerHTML = calculatorStack[calculatorStack.length - 1];
   history.push(calculatorStack[0]);
   histories.push(history);
   let historyResult = history.pop(history[history.length - 1])
   history.push("=")
-  historyScreen.innerHTML += `<div class="history"><span class='grey'>${history.join(' ')}</span>` + '<br />' + `<span class='black'>${historyResult}</span></div>`;
+  historyScreen.innerHTML += `<div class="history"><span class='grey'>${history.join(' ')}</span>`
+    + '<br />' 
+    + `<span class='black'>${historyResult}</span></div>`;
   historyResultDocument.innerHTML = " "
-  calculatorStack = []
   dot = false;
+  executed = false;
 }
 
 const renderHistory = (historyArray, index) => {
   let result = historyArray[index].pop(historyArray[index][historyArray[index].length])
   historyArray[index].push("=")
-  console.log(result)
-
   return [(historyArray[index].join(' ')), result];
 }
 
 const clearScreen = () => {
-  screen = 0
+  screen = ""
   let result = document.getElementById("result")
   result.innerHTML = 0
+  dot = false;
 }
 
 const clearStack = () => {
   let result = document.getElementById("result");
   let historyResult = document.getElementById("history-result")
-  screen = 0
+  screen = ""
   calculatorStack = []
   result.innerHTML = 0
   historyResult.innerHTML = " "
+  dot = false
 }
 
 const deleteDigit = () => {
@@ -142,11 +149,37 @@ const fractionalDigits = (number) => {
 }
 
 const dotFunction = () => {
+  if (dot) return
   dot = true
+  screen = screen + "."
 }
 
 const plusMinus = () => {
   let result = document.getElementById("result");
   screen = screen * (-1);
   result.innerHTML = screen;
+}
+
+const percent = () => {
+  screen = (+calculatorStack[0]/100) * (+screen)
+  let result = document.getElementById("result")
+  result.innerHTML = `${screen}`
+}
+
+const changeClass = (char) => {
+  let historyScreen = document.getElementById("history-screen");
+  let memoryScreen = document.getElementById("memory-screen");
+  let history = document.getElementById("history");
+  let memory = document.getElementById("memory");
+  if (char == "history"){
+    historyScreen.classList.remove("hidden");
+    memoryScreen.classList.add("hidden");
+    history.classList.add("border");
+    memory.classList.remove("border");
+  }else if (char == "memory"){
+    historyScreen.classList.add("hidden");
+    memoryScreen.classList.remove("hidden");
+    history.classList.remove("border");
+    memory.classList.add("border");
+  }
 }

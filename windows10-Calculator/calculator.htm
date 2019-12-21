@@ -55,7 +55,7 @@
               </a>
             </div>
             <div class="row">
-              <a class="show-in-big blue">&percnt;</a>
+              <a onclick="percent()" class="show-in-big blue">&percnt;</a>
               <a onclick="clearScreen()" class="cs blue">CE</a>
               <a onclick="clearStack()" class="cs blue">C</a>
               <a onclick="deleteDigit()" class="blue"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDklEQVRYR+2W4Q3CIBSErxu4iY6gm+hmbqIj6CZuUHNJMeQFeAelaUzoT8LjPo570Ak7f9PO+hgAw4G/cuAA4AHg1KFzfhtXHegpTv4qgFj8DeAM4NPowrzUyQA9xaldBaCIc451IzUWDJMBFPE7gCOASwQR6l4AboljkgAUcc55LgAUIwS/0CW5rLgAinjYmIXgOFu0FNQiQI14CoJjXpe4ANZWr93s/RCOI1cnHYEKYR2jAwxlCcIF4CKpgKVazQaOtR68BKBCsA0ZuvhmDPB04drahrmUx/0ez9nkIqqBqHkW5COIF1UyoUI0AdhMqGKlefJrmHNiLUQTwFrRZL36R7SJOBcdAMOB3R34AqM1YCEu+sgCAAAAAElFTkSuQmCC" /></a>
@@ -105,16 +105,21 @@
         </div>
       </div>
       <div class="history-memory">
-        <div class="hidden-close-bar">
-          <a id="minimize">ー</a>
-          <a id="maximize">🗆</a>
-          <a id="close">x</a>
-        </div>
-        <div class="history-memory-bar">
-          <a id="history">History</a>
-          <a id="memory">Memory</a>
+        <div class="fixed-hidden-bar">
+          <div class="hidden-close-bar">
+            <a id="minimize">ー</a>
+            <a id="maximize">🗆</a>
+            <a id="close">x</a>
+          </div>
+          <div class="history-memory-bar">
+            <a onclick="changeClass('history')" id="history" class="border">History</a>
+            <a onclick="changeClass('memory')" id="memory" class="nothing">Memory</a>
+          </div>
         </div>
         <div id="history-screen" class="history-memory-screen">
+        </div>
+        <div id="memory-screen" class="hidden history-memory-screen">
+          there's nothing saved in memory
         </div>
       </div>
 		</div>

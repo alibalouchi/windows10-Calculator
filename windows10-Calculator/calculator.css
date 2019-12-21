@@ -31,6 +31,8 @@ body {
 
 .history {
   text-align: right;
+  padding: 1rem;
+  margin: 7px;
 }
 
 .history:hover{
@@ -217,8 +219,15 @@ body {
   align-items: center;
 }
 
-#history {
+.border{
   border-bottom: 4px solid #1976D2;
+}
+
+#memory{
+  margin-left: 10%;
+}
+
+#history{
   margin-right: 10%;
 }
 
@@ -282,13 +291,14 @@ body {
     width: 40%;
     flex-direction: column;
     justify-content: space-between;
+    overflow-y: auto;
   }
 
   .hidden-close-bar {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    margin-bottom: 10%
+    margin-bottom: 10%;
   }
 
   .hidden-close-bar a {
@@ -299,6 +309,11 @@ body {
     display: none;
   }
 
+}
+
+.hidden {
+  display: none;
+  transition: ease-in-out 0.3s;
 }
 
 @media screen and (min-width: 1000px) {
