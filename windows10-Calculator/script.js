@@ -80,6 +80,7 @@ const equals = () => {
   historyResultDocument.innerHTML = " "
   dot = false;
   executed = false;
+  screen = historyResult
 }
 
 const renderHistory = (historyArray, index) => {
@@ -116,25 +117,37 @@ const deleteDigit = () => {
 }
 
 const squareRoot = () => {
+  if (calculatorStack.length == 1){
+    calculatorStack[0] = (calculatorStack[0] ** 0.5)
+  }
   let result = document.getElementById("result");
   screen = (screen ** 0.5);
-  (screen % 1 != 0) ? dot = true : dot = false;
+  calculatorStack.push(screen);
   result.innerHTML = screen;
 }
 
 const power2 = () => {
+  if (calculatorStack.length == 1){
+    calculatorStack[0] = (calculatorStack[0] ** 2)
+  }
   let result = document.getElementById("result");
   screen = (screen ** 2);
   result.innerHTML = screen;
 }
 
 const power3 = () => {
+  if (calculatorStack.length == 1){
+    calculatorStack[0] = (calculatorStack[0] ** 3)
+  }
   let result = document.getElementById("result");
   screen = (screen ** 3);
   result.innerHTML = screen;
 }
 
 const divideX = () => {
+  if (calculatorStack.length == 1){
+    calculatorStack[0] = (1 / calculatorStack[0])
+  }
   let result = document.getElementById("result");
   screen = (1 / screen);
   result.innerHTML = screen;
