@@ -36,7 +36,7 @@ body {
 }
 
 .history:hover{
-  background-color: #BDBDBD;
+  background-color: #89a6c2;
 }
 
 .close-bar a:hover,
@@ -64,7 +64,7 @@ body {
   display: flex;
   flex-direction: row;
   overflow-y: hidden;
-  background-color: #E6E6E6;
+  background-image: linear-gradient(#acbccb, #aad3ef);
 }
 
 .calculator-container {
@@ -163,7 +163,7 @@ body {
 }
 
 .row a:hover {
-  background-color: #B1B2B5;
+  background-color: #ced7;
 }
 
 #standard {
@@ -171,13 +171,13 @@ body {
 }
 
 .blue {
-  background-color: #F0F0F0;
+  background-color: #ced7de;
   font-weight: 300;
 }
 
-.number {
-  background-color: #FAFAFA;
-  font-weight: 400;
+.number{
+  background-color: #eef3f7;
+  font-weight: bold;
 }
 
 .history-memory {
